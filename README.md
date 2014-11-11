@@ -3,6 +3,9 @@
 - Few mixins of Compass.
 - No images, no scripts.
 
+### Screenshot
+![Ramen by pure CSS](screenshot.png?raw=true)
+
 ### Showcase
 - [http://codepen.io/aaronchuo/pen/GLEed](http://codepen.io/aaronchuo/pen/GLEed) by Aaron Chuo
 
