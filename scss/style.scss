@@ -1,0 +1,296 @@
+@import "compass/css3";
+
+html, body {
+  background: #BBA;
+  :before, :after {content: ''; display: block;}
+}
+
+@function rg($vpos, $hpos, $gpos) {
+  @return radial-gradient(
+    ellipse at $vpos $hpos,
+        transparent $gpos,
+        rgba(#000, .1) $gpos+1%,
+        #FC3 $gpos+1%,
+        #FC3 $gpos+3%,
+        rgba(#000, .1) $gpos+3%,
+        transparent $gpos+4%),
+}
+
+.spoon { //湯匙
+  position: absolute;
+  top: 120px;
+  bottom: 0;
+  left: -430px;
+  right: 0;
+  margin: auto;
+  width: 15px;
+  height: 150px;
+  background: #963;
+  z-index: 99;
+  @include border-radius(5px);
+  @include box-shadow(
+    0 1px 2px 1px rgba(#000, .2),
+    inset 0 -5px 2px 0 rgba(#000, .1)
+  );
+  
+  &:before {
+    position: absolute;
+    top: -70px;
+    left: -28px;
+    width: 70px;
+    height: 80px;
+    z-index: 99;
+    @include border-radius(50% / 60% 60% 40% 40%);
+    @include box-shadow(
+      1px 1px 2px 0 rgba(#000, .1),
+      -1px 0 2px 0 rgba(#000, .1),
+      inset 0 -5px 1px 1px rgba(#000, .05),
+      inset 0 -5px 8px 1px rgba(#000, .1)
+    );
+    @include background-image(
+      radial-gradient(
+        ellipse at center 70%,
+        rgba(#000, .1) 20%,
+        transparent 40%
+      ),
+      linear-gradient(
+        to top,
+        #A74,
+        #B85
+      )
+    );
+  }
+}
+
+.chopsticks { //筷子
+  position: absolute;
+  top: 50px;
+  bottom: 0;
+  left: 400px;
+  right: 0;
+  margin: auto;
+  width: 10px;
+  height: 250px;
+  background: #A74;
+  z-index: 99;
+  @include border-radius(3px);
+  @include box-shadow(
+    0 1px 2px 1px rgba(#000, .2),
+    inset 0 -5px 2px 0 rgba(#000, .2)
+  );
+  
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 15px;
+    width: 10px;
+    height: 250px;
+    background: #A74;
+    z-index: 99;
+    @include border-radius(3px);
+    @include box-shadow(
+      0 1px 2px 1px rgba(#000, .2),
+      inset 0 -5px 2px 0 rgba(#000, .2)
+    );
+  }
+}
+
+.bowl { //碗
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  overflow: hidden;
+  width: 300px;
+  height: 300px;
+  @include border-radius(50%);
+  @include box-shadow(
+    inset 0 0 2px rgba(#000, .2),
+    inset 0 3px 10px 3px rgba(#000, .7),
+    0 0 2px 2px rgba(#000, .15),
+    0 0 0 10px #EEE,
+    0 18px 15px rgba(#000, .2)
+  );
+  @include background-image(
+    radial-gradient(
+      circle at center center,
+      rgba(#000, .2) 2%,
+      #EEE 90%
+    )
+  );
+  
+  .laver { //海苔
+    position: absolute;
+    top: 20px;
+    left: 120px;
+    width: 70px;
+    height: 110px;
+    z-index: 7;
+    @include transform(rotate(20deg) skew(-7deg));
+    @include background-image(
+      linear-gradient(-20deg, rgba(#000, .9) 50%, rgba(#020, .95) 95%)
+    );
+    @include box-shadow(
+      1px 1px 2px 1px rgba(#000, .3),
+      -1px 0 0 0 rgba(#030, .8)
+    );
+    
+    &:before {
+      position: absolute;
+      top: 7px;
+      left: 60px;
+      width: 70px;
+      height: 110px;
+      z-index: 7;
+      @include transform(rotate(25deg));
+      @include background-image(
+        linear-gradient(-40deg, rgba(#000, .9) 50%, rgba(#020, .95) 95%)
+      );
+      @include box-shadow(
+        1px 1px 2px 1px rgba(#000, .3),
+        -1px 1px 0 0 rgba(#030, .8)
+      );
+    }
+  }
+  
+  .egg { //溫泉蛋
+    position: absolute;
+    top: 35px;
+    left: 30px;
+    width: 80px;
+    height: 100px;
+    background: #EEE;
+    z-index: 9;
+    @include border-radius(50% / 60% 60% 40% 40%);
+    @include transform(rotate(20deg));
+    @include box-shadow(
+      inset 0 -5px 2px 0 rgba(#000, .1),
+      1px 5px 5px 0 rgba(#000, .3)
+    );
+    
+    &:before {
+      position: relative;
+      top: 30%;
+      margin: auto;
+      width: 50%;
+      height: 50%;
+      background: #FC0;
+      @include border-radius(50%);
+      @include box-shadow(
+        0 0 1px 1px #F90,
+        inset 0 0 5px 1px rgba(#F90, .5)
+      );
+    }
+  }
+  
+  .pork { //叉燒
+    position: absolute;
+    top: 130px;
+    left: 175px;
+    width: 115px;
+    height: 70px;
+    z-index: 8;
+    @include border-radius(50% 40% / 25% 60% 30% 40%);
+    @include transform(rotate(-10deg));
+    @include box-shadow(
+      inset 0 -2px 0 2px rgba(#000, .1),
+      inset 0 -2px 0 8px rgba(#FFF, .1),
+      0 1px 1px 1px rgba(#000, .3)
+    );
+    @include background-image(
+      linear-gradient(20deg, #A53 20%, #831 95%)
+    );
+  }
+  
+  .greenonion { //蔥花
+    position: absolute;
+    top: 150px;
+    left: 140px;
+    width: 12px;
+    height: 8px;
+    background: #696;
+    z-index: 10;
+    @include border-radius(3px);
+    @include box-shadow(
+      -6px -7px 0 0 #696,
+      15px 8px 0 0 #696,
+      -25px -11px 0 -1px #696,
+      -12px 7px 0 0 #696,
+      -6px 15px 0 -1px #696,
+      -15px -7px 0 0 #696,
+      -19px 22px 0 -1px #696,
+      -3px -15px 0 -1px #696,
+      -28px -9px 0 -1px #696,
+      -3px 28px 0 -1px #696,
+      -16px 2px 0 0 #696,
+      -28px 0 0 -1px #696,
+      25px 5px 0 -1px #696,
+      15px 30px 0 -1px #696,
+      22px 22px 0 -1px #696,
+      8px 25px 0 -1px #696,
+      5px 12px 0 -1px #696,
+      14px -4px 0 -1px #696,
+      -20px 15px 0 0 #696
+    );
+    
+    &:before {
+      position: absolute;
+      top: 14px;
+      left: -12px;
+      width: 12px;
+      height: 2px;
+      background: #8B8;
+      @include transform(rotate(35deg));
+      @include box-shadow(
+        -5px 3px 0 0 #8B8,
+        -8px 6px 0 0 #8B8,
+        -11px 9px 0 0 #8B8,
+        5px -5px 0 0 #8B8,
+        10px 0 0 0 #8B8,
+        10px -20px 0 0 #8B8,
+        5px -15px 0 0 #8B8,
+        -10px -15px 0 0 #8B8,
+        -5px 8px 0 0 #8B8,
+        20px -5px 0 0 #8B8,
+        -18px -12px 0 0 #8B8,
+        10px -20px 0 0 #8B8,
+        18px -18px 0 0 #8B8,
+        -8px -22px 0 0 #8B8,
+        20px -25px 0 0 #8B8,
+        15px -15px 0 0 #8B8
+      );
+    }
+  }
+  
+  .ramen { //麵條
+    position: absolute;
+    top: -10%;
+    left: -25%;
+    width: 150%;
+    height: 120%;
+    @include border-radius(50%);
+    @include background-image(
+      rg(center, center, 20%),
+      rg(54%, 45%, 21%), rg(53%, 42%, 22%), rg(51%, 43%, 23%), rg(49%, 42%, 24%),
+      rg(60%, 55%, 18%), rg(58%, 50%, 22%), rg(58%, 51%, 18%), rg(57%, 49%, 18%),
+      rg(62%, 63%, 15%), rg(57%, 60%, 18%), rg(58%, 65%, 16%), rg(52%, 58%, 18%),
+      rg(47%, 41%, 25%), rg(45%, 40%, 26%), rg(45%, 41%, 20%), rg(47%, 41%, 27%),
+      rg(55%, 34%, 18%), rg(55%, 34%, 20%), rg(53%, 35%, 18%), rg(45%, 51%, 22%),
+      radial-gradient(circle at center center, rgba(#852, .4) 15%, transparent 50%),
+      rg(46%, 65%, 18%), rg(60%, 56%, 18%), rg(55%, 66%, 18%), rg(58%, 63%, 18%),
+      rg(55%, 65%, 21%), rg(53%, 64%, 22%), rg(51%, 63%, 23%), rg(49%, 62%, 24%),
+      radial-gradient(circle at center center, rgba(#852, .5) 15%, rgba(#A74, .7) 70%),
+      rg(49%, 43%, 25%), rg(55%, 44%, 24%), rg(56%, 45%, 23%), rg(50%, 60%, 30%),
+      rg(43%, 58%, 24%), rg(44%, 58%, 23%), rg(46%, 54%, 20%), rg(48%, 53%, 26%),
+      radial-gradient(circle at center center, rgba(#852, .6) 15%, transparent 80%),
+      rg(48%, 58%, 26%), rg(46%, 56%, 25%), rg(44%, 54%, 24%), rg(42%, 52%, 23%),
+      rg(57%, 40%, 20%), rg(55%, 55%, 29%), rg(54%, 56%, 26%), rg(53%, 57%, 25%),
+      rg(52%, 58%, 24%), rg(51%, 56%, 23%), rg(57%, 44%, 20%), rg(57%, 43%, 26%),
+      rg(52%, 58%, 14%), rg(51%, 56%, 13%), rg(57%, 44%, 10%), rg(58%, 43%, 16%),
+      rg(57%, 40%, 10%), rg(55%, 55%, 12%), rg(54%, 56%, 14%), rg(53%, 57%, 16%),
+      rg(57%, 42%, 25%), rg(56%, 41%, 24%), rg(55%, 40%, 23%), rg(54%, 50%, 22%)
+    );
+  }
+}
